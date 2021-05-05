@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Include links to CSS stylesheets below -->
+        <link href="style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="field">
+                <label class="switch">
+                    <input class="cool" type="checkbox" id="myToggle"/>
+                    <span class="slider round"></span> 
+                  </label>
+                  <label class="cool" id="moves">Moves: 0</label>
+                  <button class="cool" id="btn1">New Game</button>
+                  <form autocomplete="off">
+                    <div class="autocomplete" style="width:300px;">
+                      <input id="myInput" type="text" name="theme" placeholder="Choose a theme">
+                    </div>
+                  </form>
+                </div>
+        </div>
+        <div id="root"></div>
+
+        <!-- Include links to JavaScript files below -->
+        <div id="container"></div>
+        <script src="node_modules/jquery/dist/jquery.js"></script>
+        <script src="code.js" type="module"></script>
+    </body>
+</html>
