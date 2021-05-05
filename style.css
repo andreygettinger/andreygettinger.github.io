@@ -147,8 +147,8 @@ input:checked + .slider:after {
   white-space:nowrap;
   width: 50px;
   position: absolute;
-  top: 25px;
-  right: 440px;
+  top: 50px;
+  left: 10px;
   font-size: 20px;
 }
 
@@ -157,9 +157,9 @@ body {
   font: 16px Arial;
 }
 .autocomplete {
-  position: relative;
-  right: 600px;
-  bottom: 330px;
+  position: absolute;
+  left: 10px;
+  top: 5px;
   display: inline-block;
 }
 input {
