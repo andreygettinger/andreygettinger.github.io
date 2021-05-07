@@ -138,6 +138,10 @@ $('#myToggle').change(function(){
     document.getElementById("trans").style.color = "white";
     document.getElementById("infoo5").style.backgroundColor = "black";
     document.getElementById("infoo5").style.color = "white";
+    document.getElementById("u").style.backgroundColor = "black";
+    document.getElementById("u").style.color = "white";
+    document.getElementById("infoo7").style.backgroundColor = "black";
+    document.getElementById("infoo7").style.color = "white";
 
   }
   if(!this.checked) {
@@ -152,14 +156,18 @@ $('#myToggle').change(function(){
     document.getElementById("lat").style.color = "black";
     document.getElementById("long").style.backgroundColor = "white";
     document.getElementById("long").style.color = "black";
-    document.getElementById("w").style.backgroundColor = "white";
+    document.getElementById("w").style.backgroundColor = "lightgrey";
     document.getElementById("w").style.color = "black";
-    document.getElementById("wt").style.backgroundColor = "white";
+    document.getElementById("wt").style.backgroundColor = "lightgrey";
     document.getElementById("wt").style.color = "black";
     document.getElementById("trans").style.backgroundColor = "white";
     document.getElementById("trans").style.color = "black";
     document.getElementById("infoo5").style.backgroundColor = "white";
     document.getElementById("infoo5").style.color = "black";
+    document.getElementById("u").style.backgroundColor = "lightgrey";
+    document.getElementById("u").style.color = "black";
+    document.getElementById("infoo7").style.backgroundColor = "white";
+    document.getElementById("infoo7").style.color = "black";
   }
 });
 btn1.onclick = function(){
@@ -188,6 +196,22 @@ function autocomplete(inp, arr) {
               b.addEventListener("click", function(e) {
               inp.value = this.getElementsByTagName("input")[0].value;
               xrt = inp.value;
+
+              fetch("https://genderapi-io-genderapi-v1.p.rapidapi.com/api?name=" + xrt, {
+                "method": "GET",
+                "headers": {
+                  "x-rapidapi-key": "1db57438admsh6f6638573905e76p18f437jsn7040ddba1a93",
+                  "x-rapidapi-host": "genderapi-io-genderapi-v1.p.rapidapi.com"
+                }
+              })
+            .then(response => response.json())
+            .then(data => {
+              window.alert("Welcome to my website, " + xrt + ". According to GenderApi, the name you chose is a " + data.gender + " name with a " + data.probability + "% probability.");
+
+            })
+            .catch(err => {
+              console.error(err);
+            });
               name = 1;
               closeAllLists();
           });
@@ -275,6 +299,41 @@ wt.onclick = function(){
 .then(response => response.json())
 .then(data => {
   document.getElementById('trans').value = data.responseData.translatedText;
+})
+.catch(err => {
+	console.error(err);
+});
+};
+
+u.onclick = function(){
+  var word = document.getElementById('infoo7').value;
+  fetch("https://twinword-word-graph-dictionary.p.rapidapi.com/definition/?entry=" + word, {
+    "method": "GET",
+    "headers": {
+      "x-rapidapi-key": "1db57438admsh6f6638573905e76p18f437jsn7040ddba1a93",
+      "x-rapidapi-host": "twinword-word-graph-dictionary.p.rapidapi.com"
+    }
+  })
+.then(response => response.json())
+.then(data => {
+  console.log(data.meaning.noun);
+  var noun = data.meaning.noun;
+  var verb = data.meaning.verb;
+  var adverb = data.meaning.adverb;
+  var adj = data.meaning.adjective;
+  if (noun == "undefined") {
+    noun = "";
+  }
+  if (verb == "undefined") {
+    verb = "";
+  }
+  if (adverb == "undefined") {
+    adverb = "";
+  }
+  if (adj == "undefined") {
+    adj = "";
+  }
+  document.getElementById('infoo8').innerHTML = noun + verb + adverb + adj;
 })
 .catch(err => {
 	console.error(err);

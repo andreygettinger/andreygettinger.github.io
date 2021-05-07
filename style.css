@@ -292,3 +292,34 @@ input[type=submit] {
   top: 130px;
   left: 0px;
 }
+
+#infoo7 {
+  width: 200px;
+  position: absolute;
+  top: 345px;
+  right: 10px;
+}
+
+#u {
+  position: absolute;
+  height: 30px;
+  top: 380px;
+  right: 35px;
+  background-color: lightgrey;
+  border: none;
+  color: black;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  border-radius: 24px;
+}
+
+#infoo8 {
+  width: 200px;
+  position: absolute;
+  top: 420px;
+  right: 10px;
+}
