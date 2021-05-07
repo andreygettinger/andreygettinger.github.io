@@ -12,31 +12,39 @@ function newGame() {
   moves = 0;
 for (var i = 0; i < 8; i++) { 
   if (i == 0) {
-    var img = 'https://www.expresscopy.com/blog/wp-content/uploads/2012/08/Sunflower_small.jpg';
+    var img = 'boosun_PNG13427.png';
+    var img2 = 'sun_PNG13427.png';
   } 
   if (i == 1) {
-    var img = 'https://i.guim.co.uk/img/media/684c9d087dab923db1ce4057903f03293b07deac/205_132_1915_1150/master/1915.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=14a95b5026c1567b823629ba35c40aa0';
+    var img = 'unnamed.png';
+    var img2 = 'boounnamed.png';
   }
   if (i == 2) {
-    var img = 'https://i.guim.co.uk/img/media/7a633730f5f90db3c12f6efc954a2d5b475c3d4a/0_138_5544_3327/master/5544.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=27c09d27ccbd139fd0f7d1cef8f7d41d';
+    var img = 'ratagdfgdsfgd.png';
+    var img2 = 'booratagdfgdsfgd.png';
   } 
   if (i == 3) {
-    var img = 'https://www.extremetech.com/wp-content/uploads/2019/12/SONATA-hero-option1-764A5360-edit.jpg';
+    var img = 'boo18-188381_mexico-clipart-transparent-background-fla.png';
+    var img2 = '18-188381_mexico-clipart-transparent-background-fla.png';
   } 
   if (i == 4) {
-    var img = 'https://assets.petco.com/petco/image/upload/f_auto,q_auto/849430-center-3';
+    var img = 'hhhhhhg.png';
+    var img2 = 'boohhhhhhg.png';
   } 
   if (i == 5) {
-    var img = 'https://media.wired.com/photos/5f401ecca25385db776c0c46/master/pass/Gear-How-to-Apple-ios-13-home-screen-iphone-xs-06032019_big_large_2x.jpg';
+    var img = 'lalalal.png';
+    var img2 = 'boolalalal.png';
   } 
   if (i == 6) {
-    var img = 'https://solarsystem.nasa.gov/system/basic_html_elements/11561_Sun.png';
+    var img = 'dudududud.png';
+    var img2 = 'boodudududud.png';
   } 
   if (i == 7) {
-    var img = 'https://cdn.mos.cms.futurecdn.net/wtqqnkYDYi2ifsWZVW2MT4-1200-80.jpg';
+    var img = 'whalee.png';
+    var img2 = 'boowhalee.png';
   } 
   images.push(img);
-  images.push(img);
+  images.push(img2);
 }
 randomizeImages();
 
@@ -67,8 +75,10 @@ $("li").click(function() {
       guess2 = $(this).children("img").attr("src"); 
       moves++;
       document.getElementById('moves').innerHTML = "Moves: " + moves;
-      if (guess1 === guess2) { 
+      if ("boo" + guess1 === guess2 || guess1 === "boo" + guess2) { 
         done++;
+        $("li").children("img[src='" + guess2 + "']").addClass("match");
+        $("li").children("img[src='" + guess1 + "']").addClass("match");
         if (done == 8) {
           if (name == 1) {
             window.alert("Good job, " + xrt + "! You solved this puzzle in just " + moves + " moves!");
@@ -76,7 +86,6 @@ $("li").click(function() {
             window.alert("Good job! You solved this puzzle in just " + moves + " moves!");
           }
         }
-        $("li").children("img[src='" + guess2 + "']").addClass("match");
       } 
             else { 
         setTimeout(function() {
@@ -121,6 +130,14 @@ $('#myToggle').change(function(){
     document.getElementById("lat").style.color = "white";
     document.getElementById("long").style.backgroundColor = "black";
     document.getElementById("long").style.color = "white";
+    document.getElementById("w").style.backgroundColor = "black";
+    document.getElementById("w").style.color = "white";
+    document.getElementById("wt").style.backgroundColor = "black";
+    document.getElementById("wt").style.color = "white";
+    document.getElementById("trans").style.backgroundColor = "black";
+    document.getElementById("trans").style.color = "white";
+    document.getElementById("infoo5").style.backgroundColor = "black";
+    document.getElementById("infoo5").style.color = "white";
 
   }
   if(!this.checked) {
@@ -135,6 +152,14 @@ $('#myToggle').change(function(){
     document.getElementById("lat").style.color = "black";
     document.getElementById("long").style.backgroundColor = "white";
     document.getElementById("long").style.color = "black";
+    document.getElementById("w").style.backgroundColor = "white";
+    document.getElementById("w").style.color = "black";
+    document.getElementById("wt").style.backgroundColor = "white";
+    document.getElementById("wt").style.color = "black";
+    document.getElementById("trans").style.backgroundColor = "white";
+    document.getElementById("trans").style.color = "black";
+    document.getElementById("infoo5").style.backgroundColor = "white";
+    document.getElementById("infoo5").style.color = "black";
   }
 });
 btn1.onclick = function(){
