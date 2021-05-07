@@ -231,8 +231,25 @@ w.onclick = function(){
   })
 .then(response => response.json())
 .then(data => {
-  console.log(data);
   document.getElementById('infoo5').value = data.responseData.translatedText;
+})
+.catch(err => {
+	console.error(err);
+});
+};
+
+wt.onclick = function(){
+  var trans = document.getElementById('infoo5').value;
+  fetch("https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?q=" + trans + "&langpair=es%7Cen&de=a%40b.c&onlyprivate=0&mt=1", {
+    "method": "GET",
+    "headers": {
+      "x-rapidapi-key": "1db57438admsh6f6638573905e76p18f437jsn7040ddba1a93",
+      "x-rapidapi-host": "translated-mymemory---translation-memory.p.rapidapi.com"
+    }
+  })
+.then(response => response.json())
+.then(data => {
+  document.getElementById('trans').value = data.responseData.translatedText;
 })
 .catch(err => {
 	console.error(err);
