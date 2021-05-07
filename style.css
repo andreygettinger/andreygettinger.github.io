@@ -226,22 +226,22 @@ input[type=submit] {
 
 #infoo1 {
   position: absolute;
-  top: 300px;
+  top: 260px;
   left: 10px;
 }
 #infoo2 {
   position: absolute;
-  top: 315px;
+  top: 275px;
   left: 10px;
 }
 #infoo3 {
   position: absolute;
-  top: 330px;
+  top: 290px;
   left: 10px;
 }
 #infoo4 {
   position: absolute;
-  top: 345px;
+  top: 305px;
   left: 10px;
 }
 
@@ -321,5 +321,10 @@ input[type=submit] {
   width: 200px;
   position: absolute;
   top: 420px;
+  right: 10px;
+}
+#gtg {
+  position: absolute;
+  top: 60px;
   right: 10px;
 }
